@@ -1,0 +1,41 @@
+body{
+
+background:#161716;
+
+font-family:Arial;
+
+}
+
+.container{
+
+width:400px;
+
+margin:auto;
+
+margin-top:10px;
+
+background:#cfd2d4;
+
+padding:20px;
+
+}
+
+span{
+
+color:rgb(224, 15, 22);
+
+}
+
+p{
+
+color:rgb(81, 84, 219);
+
+margin:0;
+
+}
+
+button{
+
+padding:5px 15px;
+
+}

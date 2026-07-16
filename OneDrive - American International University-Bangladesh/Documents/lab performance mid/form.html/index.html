@@ -1,0 +1,104 @@
+
+<html>
+
+<head>
+
+<title>Student Registration</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="script.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 align="center">Student Registration Form</h2>
+
+<form onsubmit="return registration();">
+
+<table>
+
+<tr>
+<td><b>First Name <span>*</span></b></td>
+<td><input type="text" id="fname"></td>
+<td><p id="fnameError"></p></td>
+</tr>
+
+<tr>
+<td><b>Last Name <span>*</span></b></td>
+<td><input type="text" id="lname"></td>
+<td><p id="lnameError"></p></td>
+</tr>
+
+<tr>
+<td><b>Student ID <span>*</span></b></td>
+<td><input type="text" id="sid"></td>
+<td><p id="sidError"></p></td>
+</tr>
+
+<tr>
+<td><b>Email <span>*</span></b></td>
+<td><input type="text" id="email"></td>
+<td><p id="emailError"></p></td>
+</tr>
+
+<tr>
+<td><b>Credit Completed <span>*</span></b></td>
+<td><input type="number" id="credit"></td>
+<td><p id="creditError"></p></td>
+</tr>
+
+<tr>
+<td><b>Department <span>*</span></b></td>
+<td>
+
+<select id="dept">
+
+<option value="">Select</option>
+<option>CSE</option>
+
+</select>
+
+</td>
+
+<td><p id="deptError"></p></td>
+
+</tr>
+
+<tr>
+
+<td colspan="3" align="center">
+
+<button>Submit</button>
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+<br>
+
+<h3>Registered Student List</h3>
+
+<table border="1" id="studentList">
+
+<tr>
+
+<th>Name</th>
+<th>Student ID</th>
+
+</tr>
+
+</table>
+
+</div>
+
+</body>
+
+</html>
