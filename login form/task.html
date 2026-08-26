@@ -1,121 +1,109 @@
 <!DOCTYPE html>
-
+<html>
 <head>
-     <title>Report a Found Item</title>
-     <link rel="stylesheet" href="./Style/script.css">
+    <title>Report a Found Item</title>
+    <link rel="stylesheet" href="./Style/script.css">
 </head>
 
-<body>
+<body class="page-container">
 
-    <main class="page-container">
+    <h1>Report a Found Item</h1>
+    <div class="title-line"></div>
 
-        <h1>Report a Found Item</h1>
-        <div class="title-line"></div>
+    <form class="found-form" onsubmit="return validateForm()">
 
-        <form class="found-form">
+        <div class="form-group">
+            <label for="itemTitle">ITEM TITLE</label>
+            <input type="text" id="itemTitle" name="itemTitle">
+            <p id="titleError"></p>
+        </div>
 
-            <div class="form-group">
-                <label for="itemTitle">ITEM TITLE</label>
-                <input
-                    type="text"
-                    id="itemTitle"
-                    name="itemTitle"
-                    
-                >
-            </div>
 
-            <div class="form-row">
-
-                <div class="form-group">
-                    <label for="category">CATEGORY</label>
-                    <select id="category" name="category">
-                        <option value="electronics">Electronics</option>
-                        <option value="bag-wallet">Bag / Wallet</option>
-                        <option value="id-documents">ID / Documents</option>
-                        <option value="keys">Keys</option>
-                        <option value="clothing">Clothing</option>
-                        <option value="jewelry">Jewelry</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="dateFound">DATE FOUND</label>
-                    <input type="date" id="dateFound" name="dateFound">
-                </div>
-
-            </div>
+        <div class="form-row">
 
             <div class="form-group">
-                <label for="description">DESCRIPTION</label>
-                <textarea
-                    id="description"
-                    name="description"></textarea>
-                    
+                <label for="category">CATEGORY</label>
+                <select id="category" name="category">
+                    <option value="electronics">Electronics</option>
+                    <option value="bag-wallet">Bag / Wallet</option>
+                    <option value="id-documents">ID / Documents</option>
+                    <option value="keys">Keys</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="jewelry">Jewelry</option>
+                    <option value="other">Other</option>
+                </select>
             </div>
+
 
             <div class="form-group">
-                <label for="location">LOCATION FOUND</label>
-                <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    
-                >
+                <label for="dateFound">DATE FOUND</label>
+                <input type="date" id="dateFound" name="dateFound">
+                <p id="dateError"></p>
             </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <label for="description">DESCRIPTION</label>
+            <textarea id="description" name="description"></textarea>
+            <p id="descError"></p>
+        </div>
+
+
+        <div class="form-group">
+            <label for="location">LOCATION FOUND</label>
+            <input type="text" id="location" name="location">
+            <p id="locationError"></p>
+        </div>
+
+
+        <div class="form-group">
+            <label for="photo">PHOTO (OPTIONAL)</label>
+
+            <label class="upload-box" for="photo">
+                Drag a photo here, or click to upload
+            </label>
+
+            <input class="file-input"
+                   type="file"
+                   id="photo"
+                   name="photo"
+                   accept="image/*">
+        </div>
+
+
+        <div class="form-row">
 
             <div class="form-group">
-                <label for="photo">PHOTO (OPTIONAL)</label>
-
-                <label class="upload-box" for="photo">
-                    Drag a photo here, or click to upload
-                </label>
-
-                <input
-                    class="file-input"
-                    type="file"
-                    id="photo"
-                    name="photo"
-                    accept="image/*"
-                >
+                <label for="contact">YOUR CONTACT (PRIVATE - ADMIN ONLY)</label>
+                <input type="text" id="contact" name="contact">
+                <p id="contactError"></p>
             </div>
 
-            <div class="form-row">
 
-                <div class="form-group">
-                    <label for="contact">YOUR CONTACT (PRIVATE - ADMIN ONLY)</label>
-                    <input
-                        type="text"
-                        id="contact"
-                        name="contact"
-                        
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="finderName">YOUR NAME (OPTIONAL)</label>
-                    <input
-                        type="text"
-                        id="finderName"
-                        name="finderName"
-                        
-                    >
-                </div>
-
+            <div class="form-group">
+                <label for="finderName">YOUR NAME (OPTIONAL)</label>
+                <input type="text" id="finderName" name="finderName">
             </div>
 
-            <p class="privacy-note">
-                Your contact info is never shown publicly. It's only used by the admin
-                to reach you if a claim looks valid.
-            </p>
+        </div>
 
-            <button type="submit" class="submit-btn">
-                Submit Found Item
-            </button>
 
-        </form>
+        <p class="privacy-note">
+            Your contact info is never shown publicly. It's only used by the admin
+            to reach you if a claim looks valid.
+        </p>
 
-    </main>
+
+        <button type="submit" class="submit-btn">
+            Submit Found Item
+        </button>
+
+    </form>
+
+
+    <script src="validation.js"></script>
 
 </body>
 </html>
