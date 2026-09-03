@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 1100px;
+    min-height: 100vh;
+    color: #182231;
+    background-color: #ede6d5;
+    background-image: radial-gradient(
+        rgba(24, 34, 49, 0.08) 1px,
+        transparent 1px
+    );
+    background-size: 12px 12px;
+    font-family: "Public Sans", Arial, sans-serif;
+}
+
+
+
+.logout-form {
+    margin: 0;
+}
+
+.logout-btn {
+    padding: 10px 22px;
+    border: 2px solid #182231;
+    border-radius: 22px;
+    background-color: #182231;
+    color: #ffffff;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: transparent;
+    color: #182231;
+}
+
+.logout-success {
+    margin-bottom: 18px;
+    padding: 11px 13px;
+    border: 1px solid #8fb69c;
+    border-radius: 7px;
+    background-color: #e1f1e6;
+    color: #23623b;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+.navbar {
+    width: 100%;
+    height: 76px;
+    display: grid;
+    grid-template-columns:
+        minmax(270px, 1fr)
+        auto
+        minmax(270px, 1fr);
+    align-items: center;
+    padding: 0 50px;
+    background-color: #faf8f0;
+    border-bottom: 1px solid #d1c7ad;
+}
+
+/* Logo */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    gap: 10px;
+    color: #182231;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background-color: #182231;
+    color: #faf8f0;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-title {
+    color: #182231;
+    font-family: "Special Elite", cursive;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.logo-subtitle {
+    margin-top: 3px;
+    color: #66604f;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+/* Navigation links */
+
+.nav-links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    white-space: nowrap;
+}
+
+.nav-link {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #45443f;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #000000;
+}
+
+/* Admin button */
+
+.admin-login-btn {
+    justify-self: end;
+    padding: 10px 20px;
+    border: 2px solid #182231;
+    border-radius: 22px;
+    background-color: #182231;
+    color: #faf8f0;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.admin-login-btn:hover,
+.admin-login-btn.active-admin {
+    background-color: transparent;
+    color: #182231;
+}
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 0;
+}
+
+.login-box {
+    position: relative;
+    width: 440px;
+    padding: 38px 40px 32px;
+    overflow: hidden;
+    border: 1px solid #cfc5ac;
+    border-radius: 16px;
+    background-color: #faf8f0;
+    box-shadow:
+        0 18px 45px rgba(52, 45, 31, 0.14),
+        7px 7px 0 rgba(24, 34, 49, 0.08);
+}
+
+.login-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 5px;
+    background-color: #182231;
+}
+
+/* Login heading */
+
+.login-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    border-radius: 11px;
+    background-color: #182231;
+    color: #ffffff;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login-heading {
+    margin-bottom: 9px;
+    color: #a15e47;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.login-box h1 {
+    margin-bottom: 10px;
+    color: #182231;
+    font-family: "Special Elite", cursive;
+    font-size: 31px;
+    font-weight: normal;
+}
+
+.login-description {
+    margin-bottom: 27px;
+    color: #6b685e;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    width: 300px;
+    margin: 0 auto 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: #383b3e;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    text-align: left;
+}
+
+.form-group input {
+    width: 300px;
+    height: 42px;
+    padding: 0 13px;
+    border: 1px solid #cfc5ac;
+    border-radius: 7px;
+    outline: none;
+    background-color: #ffffff;
+    color: #182231;
+    font-family: "Public Sans", Arial, sans-serif;
+    font-size: 13px;
+    text-align: center;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #a09c91;
+    text-align: center;
+}
+
+.form-group input:hover {
+    border-color: #9b927e;
+}
+
+.form-group input:focus {
+    border-color: #182231;
+    box-shadow: 0 0 0 3px rgba(24, 34, 49, 0.1);
+}
+
+/* Password field */
+
+.password-field {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.password-field input {
+    width: 300px;
+    padding-right: 62px;
+    padding-left: 62px;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    padding: 3px;
+    transform: translateY(-50%);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #67645b;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Login button with same width */
+
+.login-submit {
+    width: 300px;
+    height: 43px;
+    margin: 8px auto 0;
+}
+.button-arrow {
+    font-size: 17px;
+    transition: transform 0.2s ease;
+}
+
+.login-submit:hover {
+    background-color: transparent;
+    color: #182231;
+}
+
+.login-submit:hover .button-arrow {
+    transform: translateX(4px);
+}
+
+/* =========================
+   MESSAGES
+========================= */
+
+.server-error,
+.client-error {
+    border-radius: 7px;
+    color: #9d3029;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.server-error {
+    margin-bottom: 18px;
+    padding: 11px 13px;
+    border: 1px solid #dca9a3;
+    background-color: #f8e3df;
+}
+
+.client-error:not(:empty) {
+    margin-bottom: 18px;
+    padding: 11px 13px;
+    border: 1px solid #dca9a3;
+    background-color: #f8e3df;
+}
+
+/* Bottom note */
+
+.login-divider {
+    height: 1px;
+    margin: 25px 0 18px;
+    background-color: #d9d0bc;
+}
+
+.login-note {
+    color: #777267;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+
+.logout-form {
+    margin: 0;
+}
+
+.logout-btn {
+    padding: 10px 22px;
+    border: 2px solid #182231;
+    border-radius: 22px;
+    background-color: #182231;
+    color: #ffffff;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: transparent;
+    color: #182231;
+}
+
+.logout-success {
+    margin-bottom: 18px;
+    padding: 11px 13px;
+    border: 1px solid #8fb69c;
+    border-radius: 7px;
+    background-color: #e1f1e6;
+    color: #23623b;
+    font-size: 12px;
+    line-height: 1.5;
+}
